@@ -8,16 +8,6 @@ android {
     compileSdkVersion 29
 
 
-    final def config = defaultConfig {
-        applicationId "com.example.aboutme"
-        minSdkVersion 19
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-        vectorDrawables.useSupportLibrary = true
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
     defaultConfig {
         applicationId "com.example.aboutme"
         minSdkVersion 19
