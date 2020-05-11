@@ -1,12 +1,15 @@
 package com.example.aboutme
-
+import java.util.*;
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.text.isDigitsOnly
 
 class MainActivity : AppCompatActivity() {
-
+lateinit var diceImage : ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -14,7 +17,18 @@ class MainActivity : AppCompatActivity() {
         rollbutton.setOnClickListener{rollDice()}
     }
 
-    private fun rollDice(){
-        Toast.makeText(this,"button clicked", Toast.LENGTH_SHORT).show()
+    private fun rollDice(randomInt){
+      //  Toast.makeText(this,"button clicked", Toast.LENGTH_SHORT).show()
+        //val randomInt = (1..6).random()
+         diceImage  = findViewById(R.id.diceImage)
+var drawableresource = when(randomInt){
+    1 -> R.drawable.dice_1
+    2 -> R.drawable.dice_2
+    3 -> R.drawable.dice_3
+    4 -> R.drawable.dice_4
+    5 -> R.drawable.dice_5
+    else -> R.drawable.dice_6
+}
+        diceImage.setImageResource(drawableresource)
     }
 }
